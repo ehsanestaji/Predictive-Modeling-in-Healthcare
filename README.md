@@ -1,61 +1,48 @@
-# Hospital Complication Prediction
+# Predicting Hospitalization Complications Using Machine Learning
 
-## Project Overview
+## Abstract
 
-This project aims to predict whether or not a patient will experience any complications during their hospital stay. The dataset includes various features like age, gender, BMI, and different health metrics. Multiple machine learning classifiers have been used and evaluated for this purpose.
+This project aims to develop a robust machine learning classifier to predict whether a patient will experience complications during hospitalization. We use a dataset containing various patient details and surgical timings to train and test multiple machine learning models, including Random Forest, XGBoost, and Neural Networks.
 
-## Data
+## Installation
 
-The data for this project consists of over 14,000 records with 25 features, including the target variable 'complication'.
-
-## Features
-
-- `bmi`: Body Mass Index
-- `Age`: Age of the patient
-- `asa_status`: ASA Status
-- `baseline_cancer`, `baseline_charlson`, `baseline_cvd`, etc.: Baseline health conditions
-- `ahrq_ccs`: Procedure Category
-- `ccsComplicationRate`, `ccsMort30Rate`: Complication and Mortality Rates
-- `complication_rsi`, `mortality_rsi`: Risk Severity Indices
-- `dow`: Day of the week
-- `gender`: Gender of the patient
-- `hour`, `month`: Timing of the surgery
-- `moonphase`: Moon phase
-- `mort30`: 30-day mortality
-- `race`: Race of the patient
-- `complication`: Target variable indicating if the patient experienced any complications
-
-## Models Used
-
-- Random Forest Classifier
-- Support Vector Classifier
-- Logistic Regression
-
-### Advanced Techniques
-
-- Hyperparameter tuning for Random Forest
+The project uses the following Python libraries:
+- pandas
+- scikit-learn
+- matplotlib
+- seaborn
 - XGBoost
+- TensorFlow/Keras
 
-## Requirements
+To install all required packages, run:
+```bash
+pip install -r requirements.txt
+```
 
-- Python 3.x
-- Scikit-learn
-- Pandas
-- Matplotlib
-- Seaborn
-- XGBoost
+## File Descriptions
+
+- `SurgeryTiming.csv` - The dataset containing patient details and surgery timings.
+- `Surgery Timing Data Dictionary.pdf` - Data dictionary explaining the variables in the dataset.
+- `SurgeryTime-MLPredictor.ipynb` - Jupyter Notebook containing all the code and visualizations.
 
 ## How to Run
 
-1. Clone this repository.
+1. Clone the repository.
 2. Install the required packages.
 3. Run the Jupyter Notebook.
 
-## Evaluation
+## Data Cleaning and Preprocessing
 
-The models are evaluated based on their accuracy, precision, recall, and F1-score. The Random Forest Classifier with hyperparameter tuning showed the best performance.
+Data cleaning steps included handling missing values and encoding categorical variables. Feature scaling was applied to normalize the dataset. Class imbalance was addressed by upsampling the minority class.
 
-## Future Work
+## Model Selection and Training
 
-- Experiment with more advanced algorithms like neural networks.
-- Apply more feature engineering techniques to improve the model's performance.
+We selected Random Forest, XGBoost, and Neural Networks as the classifiers for this project. Hyperparameter tuning was performed using GridSearchCV for Random Forest and XGBoost. For Neural Networks, multiple architectures were tested.
+
+## Results and Interpretation
+
+- **Random Forest**: Accuracy of 94%, with high precision and recall.
+- **XGBoost**: Accuracy of 95%, also with high precision and recall.
+- **Neural Networks**: Accuracy of 93%, slightly lower but still competitive.
+
+Various metrics like SHAP values and feature importances were used for model interpretability.
